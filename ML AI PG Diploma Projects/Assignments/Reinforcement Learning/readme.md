@@ -1,47 +1,41 @@
 Feedback:
-Data preparation30/30
-Feedback: Overall a very good work , steps correctly performed to understand the data and rectify the issues in it. Prepared the data well for the model building steps. 
-Data understanding
-
-Feedback: Good work on exploring the data and understanding the distribution . insights provided well. 
-Data cleaning
-
-Feedback: Good work , identified the data issues and dropped unnecessary features as part of analysis such as 'Time' feature 
+MDP Framework of Numerical Tic-Tac-Toe (50%)0/150
+Feedback: You missed to implement functions required for MDP framework to train an agent.
 Was this helpful to you?
-Train & test data preparation
+Defining winning states
 
-Feedback: Good work ,you have used stratified split  as part of train and test split 
+Feedback: You have not implemented is_winning function. 
 Was this helpful to you?
-Skewness mitigation
+Define step function that incorporates transition from a state and action to the next state and reward
 
-Feedback: Good work on identifying the skewness in the data , transformation applied 
+Feedback: You have not implemented any of the required functions in env file.
 Was this helpful to you?
-Model Building96/150
-Model building on raw dataset
+Training the Agent (Q-Learning) (35%)105/105
+Feedback: Overall good work. You have completed code properly but due to incomplete env file you were not able to run your code. 
+Epsilon-Decay Strategy
 
-Feedback: Applied various model types However fine tuning using optimization methods such as Grid search not applied. 
+Feedback: Epsilon decay strategy implemented correctly to pick up next action.
+Specifying Hyperparameters
+
+Feedback: Hyper parameters are initialised and used correctly. 
+Initialising the environment
+
+Feedback: env initialised properly at the beginning of each episode. 
+Deriving reward and new state from step function
+
+Feedback: Reward derivation and state transition code blocks are completed properly. 
+Q-update equation
+
+Feedback: Q update for terminal and non terminal states are done correctly. 
+Q-values Tracking (10%)15/30
+Feedback: You missed to define logically correct state for tracking agent convergence. 
 Was this helpful to you?
-Model evaluation on raw dataset
+Sample states are tracked for convergence
 
-Feedback: Evaluated the model using correct metrics
-Handling class imbalances
-
-Feedback: Good work , Class imbalance handled with various methods such as SMOTE etc. 
-Model building on balanced dataset
-
-Feedback: Applied various model types on balanced dataset . However fine tuning using optimization methods such as Grid search not applied. 
+Feedback: You have not defined logically correct states for tracking agent convergence. One of the states contains number five two times which is logically incorrect. 
 Was this helpful to you?
-Model Evaluation105/105
-Model evaluation on balancned dataset
+Coding Guidelines (5%)15/15
+Feedback: You missed to implement MDP framework functions. I would highly recommend to going through sample solution once it is available in upGrad portal. Happy Learning. 
+Coding Guidelines - Good Practices
 
-Feedback: Well done. evaluated the models using correct metrics. 
-Model performance
-
-Feedback: Well done , model has performed well. the best model performance is in the range of 95-100 %
-Conciseness and readability of the code15/15
-Readability
-
-Feedback: Code is well commented and mark down used across the analysis. 
-Conciseness
-
-Feedback: Overall coding guidelines followed.  Codes are well commented and modular in structure . Consider using PEP 8 standards as well 
+Feedback: You have written good quality code which is easy to read and understand. 
