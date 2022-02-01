@@ -1,0 +1,360 @@
+version: "2.0"
+stories:
+- story: complete path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_sendmail
+  - intent: send_mail
+  - action: utter_ask_mail_id
+  - entities:
+    - mail_id: jennis.m.vicente@gamail.com
+  - slot_was_set:
+    - mail_id: jennis.m.vicente@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: jennis.m.vicente@gmail.com
+  - action: utter_goodbye
+- story: location specified
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - intent: affirm
+  - action: utter_goodbye
+- story: complete path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: action_search_restaurants
+  - action: utter_ask_sendmail
+  - action: utter_goodbye
+- story: complete path 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: italy
+  - slot_was_set:
+    - location: italy
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - intent: goodbye
+  - action: utter_goodbye
+- story: complete path 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - intent: goodbye
+  - action: utter_goodbye
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - intent: affirm
+  - action: utter_goodbye
+- story: happy_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+    - location: mumbai
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: mumbai
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - intent: affirm
+  - action: utter_goodbye
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: bangalore
+  - action: utter_ask_sendmail
+  - intent: send_mail
+  - action: utter_ask_mail_id
+  - intent: send_mail
+    entities:
+    - mail_id: jennis.m.vicente@gmail.com
+  - slot_was_set:
+    - mail_id: jennis.m.vicente@gmail.com
+  - action: action_send_mail
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_sendmail
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: greet
+    entities:
+    - greet: hola
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: phoenix
+  - slot_was_set:
+    - location: phoenix
+  - action: utter_default
+  - intent: goodbye
+    entities:
+    - goodbye: nevermind
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+    entities:
+    - greet: hola
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Calcutta
+  - slot_was_set:
+    - location: Calcutta
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Calcutta
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Calcutta
+  - intent: affirm
+  - action: utter_goodbye
+  - intent: send_mail
+    entities:
+    - send_mail: email
+  - action: utter_ask_sendmail
+  - intent: send_mail
+  - action: utter_ask_mail_id
+  - intent: send_mail
+    entities:
+    - mail_id: jennis.m.vicente@gmail.com
+  - slot_was_set:
+    - mail_id: jennis.m.vicente@gmail.com
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: action_restart
+
+- story: interactive_story_4
+  steps:
+  - intent: restaurant_search
+    entities:
+    - restaurant_search: food
+    - send_mail: email
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - action: utter_ask_mail_id
+  - intent: send_mail
+    entities:
+    - mail_id: jae.mvf@gmail.com
+  - slot_was_set:
+    - mail_id: jae.mvf@gmail.com
+  - action: action_send_mail
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: action_restart
+
+- story: interactive_story_5
+  steps:
+  - intent: default
+    entities:
+    - default: music
+  - action: utter_default
+  - intent: default
+    entities:
+    - default: music
+  - action: utter_goodbye
